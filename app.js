@@ -16,7 +16,7 @@ const server = http.createServer((req, res)=>{
       console.log(chunk);
       body_data.push(chunk)
     })
-    req.on('end', ()=>{
+    return req.on('end', ()=>{
       const data = Buffer.concat(body_data).toString()
       console.log(data);
       const message = data.split("=")[1]
