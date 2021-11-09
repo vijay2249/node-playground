@@ -20,10 +20,17 @@ const server = http.createServer((req, res)=>{
       const data = Buffer.concat(body_data).toString()
       console.log(data);
       const message = data.split("=")[1]
-      fs.writeFileSync("msg.txt", message)
-      res.statusCode = 302
-      res.setHeader("Location", "/")
-      return res.end()
+      // fs.writeFileSync("msg.txt", message)
+      // res.statusCode = 302
+      // res.setHeader("Location", "/")
+      // return res.end()
+      fs.writeFile("msg.txt", message, err=>{
+        if(!err){
+          res.statusCode = 302
+          res.setHeader("Location", "/")
+          return res.end()
+        }
+      })
     })
   }
   res.setHeader("Content-Type", 'text/html')
