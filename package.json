@@ -1,0 +1,24 @@
+{
+  "name": "node-playground",
+  "version": "0.1.0",
+  "description": "node learning play-groung",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-script": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijay2249/node-playground.git"
+  },
+  "author": "vijay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vijay2249/node-playground/issues"
+  },
+  "homepage": "https://github.com/vijay2249/node-playground#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
