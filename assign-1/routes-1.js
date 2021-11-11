@@ -17,6 +17,7 @@ const handleRequest = (req, res) =>{
     return req.on('end', ()=>{
       const data = Buffer.concat(body_data).toString()
       console.log("Use-Input ===>",data.split("=")[1])
+      res.statusCode = 302
       res.setHeader("Location", "/")
       return res.end()
     })
