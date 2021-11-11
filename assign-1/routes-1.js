@@ -31,7 +31,3 @@ module.exports = {
   routesHandler : handleRequest,
   text: "Some dummy text"
 }
-
-// modules.exports.routesHandler = handleRequest
-// if there is only one return function then this is preferred
-// module.exports = handleRequest
