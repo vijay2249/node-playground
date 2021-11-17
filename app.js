@@ -1,5 +1,5 @@
 // core modules
-const http = require("http")
+// const http = require("http")
 
 // third party modules
 const express = require("express")
@@ -13,11 +13,10 @@ app.use((req, res, next)=>{
 
 app.use((req, res, next)=>{
   console.log("This is second app.use function");
-  next();
+  // next();
+  res.send("<h1>Hello there</h1>")
 })
 
-const server = http.createServer(app)
-
-server.listen(3000, ()=>{
-  console.log("Server started in port 3000");
-})
+app.listen(3000, ()=>console.log("Server started in port 3000")) //does the same work as the below two lines
+// const server = http.createServer(app)
+// server.listen(3000, ()=>{console.log("Server started in port 3000");})
