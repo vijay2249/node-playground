@@ -25,7 +25,7 @@ app.use("/admin", adminRoutes)
 app.use(shopRoutes)
 
 app.use((req, res, next)=>{
-  res.status(404).send("<h1>Page not found</h1>")
+  res.status(404).sendFile(__dirname+"/views/404.html")
 })
 
 app.listen(3000, ()=>console.log("Server started in port 3000")) //does the same work as the below two lines
