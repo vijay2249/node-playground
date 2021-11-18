@@ -1,3 +1,9 @@
+# custom gitignore files
+routes.js
+
+
+
+
 # Logs
 logs
 *.log
