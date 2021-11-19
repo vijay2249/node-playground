@@ -9,7 +9,7 @@ const router = express.Router();
 const productsData = require("./admin")
 
 router.get('/', (req, res, next) => {
-  res.render("shop")
+  res.render("shop", {data: productsData.products, title: "Shop List"})
   // console.log(productsData.products);
   // res.sendFile(path.join(dir, 'views', 'shop.html'));
 });
