@@ -6,6 +6,8 @@ const express = require("express")
 const bodyParser = require("body-parser")
 
 const app = express()
+app.set("view engine", "pug") //compile the dynamic content through the pug engine
+app.set("views", "views") //the templates are found the 2nd argument named folder in this line of code
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname +"/public"))
 
