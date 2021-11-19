@@ -22,7 +22,7 @@ app.use(express.static(__dirname +"/public"))
 const adminRoutes = require("./routes/admin")
 const shopRoutes = require("./routes/shop")
 
-app.use("/admin", adminRoutes)
+app.use("/admin", adminRoutes.router)
 app.use(shopRoutes)
 
 app.use((req, res, next)=>{
