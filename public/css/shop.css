@@ -3,19 +3,19 @@ main {
   margin: auto;
 }
 
-.grid_minmax{
+/* .grid_minmax{
   background-color: royalblue;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: min-content 1fr min-content;
-}
+} */
 
 .grid {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: stretch;
+  /* align-items: stretch; */
 }
 
 .card {

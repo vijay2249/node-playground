@@ -28,7 +28,8 @@ app.use("/admin", adminRoutes.router)
 app.use(shopRoutes)
 
 app.use((req, res, next)=>{
-  res.status(404).sendFile(__dirname+"/views/404.html")
+  // res.status(404).sendFile(__dirname+"/views/404.html")
+  res.render("404") //response of html page using pug engine
 })
 
 app.listen(3000, ()=>console.log("Server started in port 3000")) //does the same work as the below two lines
