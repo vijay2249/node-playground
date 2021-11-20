@@ -4,10 +4,22 @@
 // third party modules
 const express = require("express")
 const bodyParser = require("body-parser")
-
+// const {engine} = require("express-handlebars")
 const app = express()
-app.set("view engine", "pug") //compile the dynamic content through the pug engine
+
+
+// handle bars engine setup
+// app.engine("handlebars", engine())
+// app.set("view engine", "handlebars") //compile the dynamic content through the pug engine
+
+// pug engine setup 
+app.set("view engine", "pug")
+
+// setting the views folder
 app.set("views", "views") //the templates are found the 2nd argument named folder in this line of code
+
+
+//configurations for the app
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname +"/public"))
 
