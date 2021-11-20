@@ -13,7 +13,7 @@ const products = []
 router.get('/add-product', (req, res, next) => {
   // normal html file send as response
   // res.sendFile(path.join(dir, 'views', 'add-product.html'));
-  res.render('add-product') //response through compile pug engine
+  res.render('add-product', {title: "Add product", path: '/admin/add-product'}) //response through compile pug engine
 });
 
 // /admin/add-product => POST
