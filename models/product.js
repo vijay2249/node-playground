@@ -1,17 +1,21 @@
 const fs = require('fs')
 const path = require('path')
 
+const filePath = path.join(path.dirname(require.main.filename), "data", 'products.json')
+
+const productsDataFromFile = callBack =>{
+  fs.readFile(filePath, (err, content)=>{
+    if(err) callBack([])
+    else callBack(JSON.parse(content))
+  })
+}
+
 module.exports = class Product{
   constructor(title){
     this.title = title
   }
   save(){
-    const filePath = path.join(path.dirname(require.main.filename), "data", 'products.json')
-    fs.readFile(filePath, (err, content)=>{
-      let products = []
-      if(!err){
-        products = JSON.parse(content)
-      }
+    productsDataFromFile(products =>{
       products.push(this)
       fs.writeFile(filePath, JSON.stringify(products), (err)=>{
         console.log(err);
@@ -25,10 +29,6 @@ module.exports = class Product{
   // add a callback to the fetchAll method as a parameter function 
 
   static fetchAll(callBack){
-    const filePath = path.join(path.dirname(require.main.filename), "data", 'products.json')
-    fs.readFile(filePath, (err, content)=>{
-      if(err) callBack([])
-      else callBack(JSON.parse(content))
-    })
+    productsDataFromFile(callBack)
   }
 }
