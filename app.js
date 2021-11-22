@@ -4,8 +4,8 @@ const ejs = require("ejs")
 
 const app = express()
 
-app.set("view engine", "ejs") //ejs engine setup
-app.set("views", "views") //the templates are found the 2nd argument named folder in this line of code
+app.set("view engine", "ejs")
+app.set("views", "views")
 
 //configurations for the app
 app.use(bodyParser.urlencoded({extended: true}))
